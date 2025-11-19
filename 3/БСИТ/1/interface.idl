@@ -1,0 +1,12 @@
+[
+	uuid(d41eca08-9b40-4e3e-a804-026ae0929dda),
+	version(1.0)
+]
+interface Interface {
+	long Get_Size_File([in]handle_t hBinding, [in, string] char* Path);
+	int Authentication([in]handle_t hBinding, [in, string] char* Login, [in, string] char* Password);
+	int Download_File([in]handle_t hBinding, [in, string] char* Path, [in, out, size_is(Size)] char* Arr, [in] long Size);
+	int Upload_File([in]handle_t hBinding, [in, string] char* Path, [in, out, size_is(Size)] char* Arr, [in] long Size);
+	int Delete_File([in]handle_t hBinding, [in, string] const char* Path);
+	int Exit([in]handle_t hBinding);
+}
